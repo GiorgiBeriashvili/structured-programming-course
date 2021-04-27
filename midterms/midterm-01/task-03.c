@@ -73,7 +73,7 @@ int main() {
 
     printf("Mean of male scores: %f\n", male_mean);
 
-    if (male_mean > female_sum) {
+    if (male_mean > female_mean) {
         printf("Males have higher mean score");
     } else if (male_mean < female_mean) {
         printf("Females have higher mean score");
