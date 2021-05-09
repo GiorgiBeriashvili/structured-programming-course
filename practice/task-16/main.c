@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
+#ifdef __unix__
+#include <unistd.h>
+#elif _WIN32
+#include <windows.h>
+#endif
+
 #define SIDES 6
 #define ROWS 3
 #define COLUMNS 3
@@ -177,7 +183,11 @@ int main() {
 }
 
 int roll_die(int sides) {
+#ifdef __unix__
     sleep(1);
+#elif _WIN32
+    Sleep(1);
+#endif
 
     srand(time(NULL));
 
